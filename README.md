@@ -13,6 +13,41 @@ You can specify any binary sequence, and the notebook will generate the Verilog 
 - Example usage and waveform visualization
 
 ---
+
+# FSM Sequence Detector Algorithm
+
+* **States:**
+
+  * $S_0, S_1, …, S_n$
+  * $S_0$: no bits matched
+  * $S_i$: first *i* bits matched
+  * $S_n$: full sequence matched (final state)
+
+---
+
+## Transition Rules
+
+* From $S_i$ (where $i < n$):
+
+  * If input matches expected bit $q_{i+1}$ → go to $S_{i+1}$.
+  * Else → fallback to the state representing the **longest prefix** of the sequence that matches the current suffix.
+
+* From $S_n$:
+
+  * Set **detected = 1**.
+  * Transition based on **overlap handling** (prefix–suffix match).
+
+* Default → go to $S_0$.
+
+---
+
+## Output Rule
+
+* $detected = 1$ if and only if the current state = $S_n$.
+* Otherwise, $detected = 0$.
+
+---
+
 ## Example
 <img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/78f72d24-9ab0-4ec5-8d9c-b169aa1f3495" />
 
