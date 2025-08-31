@@ -13,6 +13,9 @@ You can specify any binary sequence, and the notebook will generate the Verilog 
 - Example usage and waveform visualization
 
 ---
+## Example
+<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/78f72d24-9ab0-4ec5-8d9c-b169aa1f3495" />
+
 
 ## Usage
 
